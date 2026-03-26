@@ -6,6 +6,9 @@ function VideoPinSection() {
   const isMobile = useMediaQuery({
     query: "(max-width: 768px)",
   });
+  const pinVideoSrc = `${import.meta.env.BASE_URL}videos/pin-video.mp4`;
+  const circleTextSrc = `${import.meta.env.BASE_URL}images/circle-text.svg`;
+  const playIconSrc = `${import.meta.env.BASE_URL}images/play.svg`;
 
   useGSAP(() => {
     if (!isMobile) {
@@ -36,15 +39,11 @@ function VideoPinSection() {
         }}
         className="size-full video-box"
       >
-        <video src="/videos/pin-video.mp4" playsInline muted loop autoPlay />
+        <video src={pinVideoSrc} playsInline muted loop autoPlay />
         <div className="abs-center md:scale-100 scale-200">
-          <img src="/images/circle-text.svg" alt="" className="spin-circle" />
+          <img src={circleTextSrc} alt="" className="spin-circle" />
           <div className="play-btn">
-            <img
-              src="/images/play.svg"
-              alt=""
-              className="size-[3vw] ml-[.5vw]"
-            />
+            <img src={playIconSrc} alt="" className="size-[3vw] ml-[.5vw]" />
           </div>
         </div>
       </div>

@@ -4,10 +4,11 @@ function FooterSection() {
   const isMobile = useMediaQuery({
     query: "(max-width: 768px)",
   });
+  const splashVideoSrc = `${import.meta.env.BASE_URL}videos/splash.mp4`;
   return (
     <section className="footer-section">
       <img
-        src="/images/footer-dip.png"
+        src="images/footer-dip.png"
         alt=""
         className="w-full object-cover -translate-y-1"
       />
@@ -21,12 +22,12 @@ function FooterSection() {
 
         {isMobile ? (
           <img
-            src="/images/footer-drink.png"
+            src="images/footer-drink.png"
             className="absolute top-0 object-contain"
           />
         ) : (
           <video
-            src="/videos/splash.mp4"
+            src={splashVideoSrc}
             autoPlay
             playsInline
             muted
@@ -74,7 +75,7 @@ function FooterSection() {
                 placeholder="Enter your email"
                 className="w-full placeholder:font-sans placeholder:text-[#999999]"
               />
-              <img src="/images/arrow.svg" alt="" />
+              <img src="images/arrow.svg" alt="" />
             </div>
           </div>
         </div>

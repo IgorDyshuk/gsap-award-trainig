@@ -10,6 +10,7 @@ function HeroSection() {
   const isTablet = useMediaQuery({
     query: "(max-width: 1024px)",
   });
+  const heroVideoSrc = `${import.meta.env.BASE_URL}videos/hero-bg.mp4`;
   useGSAP(() => {
     const titleSplit = SplitText.create(".hero-title", {
       type: "chars",
@@ -66,20 +67,20 @@ function HeroSection() {
           <>
             {isMobile && (
               <img
-                src="/images/hero-bg.png"
+                src="images/hero-bg.png"
                 alt=""
                 className="absolute bottom-40 size-full object-cover"
               />
             )}
             <img
-              src="/images/hero-img.png"
+              src="images/hero-img.png"
               alt=""
               className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
             />
           </>
         ) : (
           <video
-            src="/videos/hero-bg.mp4"
+            src={heroVideoSrc}
             autoPlay
             muted
             playsInline
